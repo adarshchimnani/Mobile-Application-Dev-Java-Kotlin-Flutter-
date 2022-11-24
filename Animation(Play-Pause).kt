@@ -27,7 +27,10 @@ class MainActivity : AppCompatActivity() {
         image = findViewById(R.id.image)
         togBtn = findViewById(R.id.toggleBtn)
 
-     
+        anim = ObjectAnimator.ofFloat(image, "rotation", 0f, 360f);
+        anim.setDuration(1000);
+        anim.setRepeatCount(1000);
+        anim.setRepeatMode(ObjectAnimator.RESTART);
     }
 
    

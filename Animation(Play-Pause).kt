@@ -37,7 +37,22 @@ class MainActivity : AppCompatActivity() {
         //1 - runOnUiThread Approach
         val thread = Thread(Runnable {
             runOnUiThread {
-               
+                try {
+                    if (anim.isPaused) {
+                        anim.resume()
+                        Toast.makeText(this, "Resume", Toast.LENGTH_LONG).show()
+
+                    } else if (togBtn.isChecked) {
+                        anim.start()
+                        Toast.makeText(this, "Start", Toast.LENGTH_LONG).show()
+                    } else {
+                        anim.pause()
+                        Toast.makeText(this, "Pause", Toast.LENGTH_LONG).show()
+                    }
+                } catch (e: Exception) {
+                    Toast.makeText(this, e.message, Toast.LENGTH_LONG).show()
+
+                }
             }
         })
 

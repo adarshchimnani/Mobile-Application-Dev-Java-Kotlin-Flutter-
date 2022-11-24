@@ -33,5 +33,14 @@ class MainActivity : AppCompatActivity() {
         anim.setRepeatMode(ObjectAnimator.RESTART);
     }
 
-   
+    fun clickMe(view: View) {
+        //1 - runOnUiThread Approach
+        val thread = Thread(Runnable {
+            runOnUiThread {
+               
+            }
+        })
+
+        thread.start()
+    }
 }
